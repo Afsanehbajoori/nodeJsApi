@@ -1,14 +1,10 @@
 import express  from "express";
 import {v4 as uuidv4} from 'uuid';
-import routerUser from './users';
-
-
-
 
 const routerUser= express.Router();
 
 
-const users= [
+let users= [
     {
         firstname : "Allan" , 
         lastname: "Tori",
@@ -40,4 +36,32 @@ routerUser.post('/' , function(req,res) {
 
 routerUser.get('/:id' , function(req , res) {
     const {id} =req.params;
-  
+    const foundUser = users.find((user) => user.id == id);
+    res.send(foundUser);
+});
+
+routerUser.delete('/:id' , function(req , res) {
+    const {id} =req.params;
+    users = users.filter((user) => user.id != id);
+    res.send(`user ${id} deleted`);
+});
+
+routerUser.patch('/:id' , function(req,res) {
+    const {id} =req.params;
+    const {firstname , lastname , age} = req.body;
+    const user = users.find((user) => user.id == id );
+
+    if(firstname){
+       user.firstname = firstname;
+    }
+    if(lastname){
+       user.lastname= lastname;
+    }
+    if(age){
+    user.age=age
+    }
+
+    res.send(`user ${id} updated`);
+})
+
+export default routerUser;
