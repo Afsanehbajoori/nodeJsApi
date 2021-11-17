@@ -1,0 +1,41 @@
+in the command promp make sure at you have installed node.js and npm with command:
+node --version
+npm --version
+make a directory: mkdir nodeJsApi
+run command : npm init -y to install package .jason
+open vs code with command : code .
+in the package.json have to add dependencies:
+"dependencies": {
+    "body-parser": "~1.19.0",
+    "cors" :"2.8.5",
+    "express" :"~4.17.1",
+    "mssql" : "^7.2.1"
+  }
+
+  have to add dev dependencies : nodemon
+  "devDependencies": {
+    "nodemon" : "^2.0.15"
+  }
+  have to add "type": "module" after "main"
+  have to add "start" in the script:
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "nodemon api.js"
+  }
+
+
+  we have to install all of these libraries in the command prompt:
+  npm install 
+
+ we have to config the sql server, for that have to make a file in the vs code : dbconfig.js 
+ we need to make a database in the sql server
+
+we have to create tables in the sql server and with the same name , create a file and a class in the vs code (fx. order.js file with the class order)
+
+each time we create a js file , have to export that , because can we use it in the other files.
+
+we can make a sql server connection or make a json file to work with.
+
+for at get users by id or post by id have to install uuid package (npm install uuid) and have to import that to use it by : import {v4 as uuidv4} from 'uuid';
+
+
