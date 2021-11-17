@@ -44,6 +44,17 @@ routerOrdre.delete('/:id' , function(req,res) {
     res.send(`delete ${id}`); 
 });
 
+routerOrdre.patch('/:id' , function(req,res) {
+    const {id} = req.params;
+    const {Id , Title , Quantity , Message,City} = req.body;
+    const order =orders.find((order) => order.Id == id);
 
+    if(Id){order.Id == Id}
+    if(Title){ order.Title == Title}
+    if(Quantity){order.Quantity == Quantity}
+    if(Message){order.Message == Message}
+    if(City){order.City == City}
+    res.send(`update ${id}`); 
+});
 
 export default routerOrdre;
