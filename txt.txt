@@ -24,8 +24,8 @@ in the package.json have to add dependencies:
   }
 
 
-  we have to install all of these libraries in the command prompt:
-  npm install 
+  we have to install all of these libraries in the command prompt: npm install
+  
 
  we have to config the sql server, for that have to make a file in the vs code : dbconfig.js 
  we need to make a database in the sql server
@@ -39,3 +39,4 @@ we can make a sql server connection or make a json file to work with.
 for at get users by id or post by id have to install uuid package (npm install uuid) and have to import that to use it by : import {v4 as uuidv4} from 'uuid';
 
 
+install mongodb : npm install mongodb
